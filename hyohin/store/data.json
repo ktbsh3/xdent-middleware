@@ -1,0 +1,21 @@
+{
+  "account": {
+    "mail": "nas@xdent.cz",
+    "pwd": "online"
+  },
+
+  "dentists": [
+    {
+      "name" : "Tomas Kubista",
+      "id" : "292a5ebd-0a81-4dbc-bbf7-e5fdb0c06818",
+      "room": "ordinace 2"
+    },
+    {
+      "name" : "Petra Lacinova",
+      "id" : "231d3511-0cd7-4ea5-a887-1c8799f32372",
+      "room": "ordinace 4"
+    }
+  ],
+
+  "rooms": ["ordinace 1", "ordinace 2", "ordinace 3", "ordinace 4"]
+}
