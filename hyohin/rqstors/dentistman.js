@@ -1,9 +1,9 @@
 var request = require('request');
+var he = require('he');
 var low = require('lowdb');
 var FileSync = require('lowdb/adapters/FileSync');
 var adapter = new FileSync('db.json');
 var db = low(adapter);
-var htmlparser = require('htmlparser2');
 
 function getDentists() {
     let options = {
@@ -29,14 +29,27 @@ function extractSeeWhatIDidThere(body) {
             mc_divStaff = line;
         }
     });
-    var docs = mc_divStaff.match(/(<h4.*?\/h4>)/g);
-    var ids = mc_divStaff.match(/(data-id=".*?")/g);
+    var docs = mc_divStaff.match(/(<h4.*?\/h4>)/g); //Array of dogturds
+    var ids = mc_divStaff.match(/(data-id=".*?")/g); //Array of their data IDs
     var mapped = [];
     for (i = 0; i < docs.length; i++) {
-        mapped[docs[i]] = ids[i];
+        let temp = {
+            "name": he.decode(docs[i].match(/(?<=>)(.*?)(?=<)/)[0].toString()),
+            "id": ids[i].match(/(?<=")(.*?)(?=")/).toString(),
+            "room": ""
+        };
+        db.get('dentists').push(temp).write();
+        mapped.push(temp);
     }
+    /*for (var key in mapped) {
+        if (Object.prototype.hasOwnProperty.call(mapped, key)) {
+            id = mapped[key].match(/(?<=")(.*?)(?=")/).toString();
+            db.set(`dentists.${key}`, id).write();
+        }
+    }*/
     console.log(mapped);
     db.set('dentists', mapped).write();
+    console.log(db.get('dentists').value());
 
 }
 

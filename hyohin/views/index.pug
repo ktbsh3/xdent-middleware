@@ -3,14 +3,15 @@ extends layout
 block content
   h1= title
   p #{message}, welcome to #{title}
-  p #{data.account.mail}
+  p #{auth.email}
   a(href="/auth")
     button(type=button) re-authenticate
 
   ul#users
-    for dentist in data.dentists
+    for dentist in dentists
       p #{dentist.name}
       select(name="ordinace")
-        each room in data.rooms
+        each room in rooms
           option(value=room selected=(dentist.room === room)) #{room}
+  button(type=button) Refresh
   button(type=button) Save

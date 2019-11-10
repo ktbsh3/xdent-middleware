@@ -1,10 +1,12 @@
 var request = require('request');
-var low = require('lowdb');
-var FileSync = require('lowdb/adapters/FileSync');
-var adapter = new FileSync('db.json');
-var db = low(adapter);
+//var low = require('lowdb');
+//var FileSync = require('lowdb/adapters/FileSync');
+//var adapter = new FileSync('db.json');
+//var db = low(adapter);
 
-function getCookies(login, pwd ) {
+function getCookies(db) {
+    var login = db.get('auth.email').value();
+    var pwd = db.get('auth.password').value();
     var options = {
         method: 'POST',
         url: 'https://app.xdent.cz/Account/Login.aspx',
@@ -27,7 +29,7 @@ function getCookies(login, pwd ) {
 function condenseCookies(cookieArray) {
     cookieArray.forEach( (cookie, i) => {
         cookieArray[i] = cookie.slice(0, cookie.indexOf(";"));
-    })
+    });
     return cookieArray.join(";");
 }
 
