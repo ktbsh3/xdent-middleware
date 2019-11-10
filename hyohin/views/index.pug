@@ -1,17 +1,21 @@
 extends layout
 
 block content
+  p= opstatus
   h1= title
-  p #{message}, welcome to #{title}
+  h2= "Dashboard"
+  h4 Aktivni ucet:
   p #{auth.email}
   a(href="/auth")
     button(type=button) re-authenticate
 
+  h4= "Seznam lekaru:"
   ul#users
     for dentist in dentists
       p #{dentist.name}
       select(name="ordinace")
         each room in rooms
           option(value=room selected=(dentist.room === room)) #{room}
-  button(type=button) Refresh
-  button(type=button) Save
+  a(href="/updatelist")
+    button(type=button) Obnov seznam lekaru
+  button(type=button) Uloz prirazeni ordinaci

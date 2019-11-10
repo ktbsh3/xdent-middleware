@@ -1,11 +1,8 @@
 var request = require('request');
 var he = require('he');
-var low = require('lowdb');
-var FileSync = require('lowdb/adapters/FileSync');
-var adapter = new FileSync('db.json');
-var db = low(adapter);
+var db = require('../database');
 
-function getDentists() {
+function getDentists(callback) {
     let options = {
         method: 'GET',
         url: 'https://app.xdent.cz/Settings/Calendars/',
@@ -15,7 +12,12 @@ function getDentists() {
             }
     };
     request(options, (err, res, body) => {
-        extractSeeWhatIDidThere(res.body);
+        if (err) {
+            callback(err)
+        }
+        else {
+            callback(extractSeeWhatIDidThere(res.body));
+        }
     })
 
 }
@@ -29,28 +31,26 @@ function extractSeeWhatIDidThere(body) {
             mc_divStaff = line;
         }
     });
-    var docs = mc_divStaff.match(/(<h4.*?\/h4>)/g); //Array of dogturds
-    var ids = mc_divStaff.match(/(data-id=".*?")/g); //Array of their data IDs
-    var mapped = [];
-    for (i = 0; i < docs.length; i++) {
-        let temp = {
-            "name": he.decode(docs[i].match(/(?<=>)(.*?)(?=<)/)[0].toString()),
-            "id": ids[i].match(/(?<=")(.*?)(?=")/).toString(),
-            "room": ""
-        };
-        db.get('dentists').push(temp).write();
-        mapped.push(temp);
-    }
-    /*for (var key in mapped) {
-        if (Object.prototype.hasOwnProperty.call(mapped, key)) {
-            id = mapped[key].match(/(?<=")(.*?)(?=")/).toString();
-            db.set(`dentists.${key}`, id).write();
+    if (mc_divStaff != null) {
+        var docs = mc_divStaff.match(/(<h4.*?\/h4>)/g); //Array of dogturds
+        var ids = mc_divStaff.match(/(data-id=".*?")/g); //Array of their data IDs
+        var mapped = [];
+        for (i = 0; i < docs.length; i++) {
+            let temp = {
+                "name": he.decode(docs[i].match(/(?<=>)(.*?)(?=<)/)[0].toString()),
+                "id": ids[i].match(/(?<=")(.*?)(?=")/).toString(),
+                "room": ""
+            };
+            db.get('dentists').push(temp).write();
+            mapped.push(temp);
         }
-    }*/
-    console.log(mapped);
-    db.set('dentists', mapped).write();
-    console.log(db.get('dentists').value());
-
+        db.set('dentists', mapped).write();
+        console.log(db.get('dentists').value());
+        return ("Seznam lekaru aktualizovan");
+    }
+    else {
+        return("Nebyla nalezena odpoved obsahujici seznam lekaru, je platna autentikace?");
+    }
 }
 
-getDentists();
+module.exports = getDentists;
