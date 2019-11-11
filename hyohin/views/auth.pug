@@ -1,9 +1,9 @@
 extends layout
 
 block content
-    form(method='POST' action='/auth/update')
+    form(method='POST' action='/auth/update').login
         label(for='email') Email:
         input.form-control(type='email', id='email', name='email')
         label(for='password') Password:
         input.form-control(type='password', id='password', name='password')
-        button(type='submit') Submit
+        +submit-primary("Prihlasit")

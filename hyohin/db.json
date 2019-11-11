@@ -2,44 +2,84 @@
   "auth": {
     "email": "nas@xdent.cz",
     "password": "online",
-    "cookies": "ASP.NET_SessionId=254hw1uvz0xjmkhnyfec20hn;ASP.NET_SessionId=254hw1uvz0xjmkhnyfec20hn;.ASPXAUTH=B162E3C32494B9EC8A92C6932880FF64525505CE08A0EDD9BB79B7E27A8FF25180ED6B3FBC82A0B54BB0405F584C47CC54EFAF424C75B4E327AC596B11E73ACA1B3D43C17632790475CEDD25BF809529FCE1DB262E93477AE6076CE1B25F4595AC2523DB6AE1D200A2CE3C48C031F2F350CD1CAF199B1273FB06133EE803FEDA0FFA29BA1B0E3E5E4EFA0EB65D1EE5650A902DE5784A381D75902ACC7B337219;hUserLogin=1c3ef728-cc56-4fb9-9528-9247eec117ba;hUserLoginRedirect=True"
+    "cookies": "ASP.NET_SessionId=dojm54xn0rkrhahr3d1w5zql;ASP.NET_SessionId=dojm54xn0rkrhahr3d1w5zql;.ASPXAUTH=46BBBAA69C0CEA721DF9183765ADCD626D7147185DDFA6A0F5544EF3F2FB21D8A157C60B2E34F276BE3D9A2E0C774853C7EE45F24945614210576E4DC261B71ADED700D68B7799460159A9788CB1DB59322980382A336A433078A8D4E727FEFB33689DADFC8AC74204A9353D29918BF34D40C3C9BF3911B604CF0062A682494C03324E270AB839085DD8B01CCAC426FE5BBB6D18FA701DFC925BFBC1319187BA;hUserLogin=1c3ef728-cc56-4fb9-9528-9247eec117ba;hUserLoginRedirect=True"
   },
-  "rooms": [
-    "ordinace 1",
-    "ordinace 2",
-    "ordinace 3",
-    "ordinace 4"
-  ],
   "dentists": [
     {
       "name": "Tomáš Kubišta",
-      "id": "292a5ebd-0a81-4dbc-bbf7-e5fdb0c06818,292a5ebd-0a81-4dbc-bbf7-e5fdb0c06818",
-      "room": ""
+      "id": "292a5ebd-0a81-4dbc-bbf7-e5fdb0c06818"
     },
     {
       "name": "Petra Lacinová",
-      "id": "231d3511-0cd7-4ea5-a887-1c8799f32372,231d3511-0cd7-4ea5-a887-1c8799f32372",
-      "room": ""
+      "id": "231d3511-0cd7-4ea5-a887-1c8799f32372"
     },
     {
       "name": "Apolena Apolenová",
-      "id": "c9aa2c54-f610-49c3-af9e-fb97c08cbde3,c9aa2c54-f610-49c3-af9e-fb97c08cbde3",
-      "room": ""
+      "id": "c9aa2c54-f610-49c3-af9e-fb97c08cbde3"
     },
     {
       "name": "Monika Moniková",
-      "id": "ba7dd0ed-a16f-4a18-bfc5-a20ec4047b56,ba7dd0ed-a16f-4a18-bfc5-a20ec4047b56",
-      "room": ""
+      "id": "ba7dd0ed-a16f-4a18-bfc5-a20ec4047b56"
     },
     {
       "name": "Soňa  Soňová",
-      "id": "c07bb56c-fd30-4c48-8cdc-81dcde03e2d6,c07bb56c-fd30-4c48-8cdc-81dcde03e2d6",
-      "room": ""
+      "id": "c07bb56c-fd30-4c48-8cdc-81dcde03e2d6"
     },
     {
       "name": "Jan  Novák",
-      "id": "ccda5ebb-9cf5-429d-9498-49b3a994a4a7,ccda5ebb-9cf5-429d-9498-49b3a994a4a7",
-      "room": ""
+      "id": "ccda5ebb-9cf5-429d-9498-49b3a994a4a7"
     }
-  ]
+  ],
+  "rooms": [
+    {
+      "name": "Ordinace 1",
+      "dentist": "231d3511-0cd7-4ea5-a887-1c8799f32372"
+    },
+    {
+      "name": "Ordinace 2",
+      "dentist": "ba7dd0ed-a16f-4a18-bfc5-a20ec4047b56"
+    },
+    {
+      "name": "Ordinace 3",
+      "dentist": "c9aa2c54-f610-49c3-af9e-fb97c08cbde3"
+    },
+    {
+      "name": "Ordinace 4",
+      "dentist": "ccda5ebb-9cf5-429d-9498-49b3a994a4a7"
+    }
+  ],
+  "colormap": {
+    "ošetření dětské": "background-color:#d99694;",
+    "Zkouška": "background-color:#4f81bd;",
+    "ošetření dospělého pacienta": "background-color:#00ff00;",
+    "Vstupní prohlídka 0-6 let": "background-color:#ff99cc;",
+    "Kaz 0,5 h ": "background-color:#9999ff;",
+    "FCE + SKUS": "background-color:#c6d9f0;",
+    "Kaz 1 h": "background-color:#9999ff;",
+    "Dentální hygiena": "background-color:#e36c09;",
+    "Vstupní prohlídka": "background-color:#b8cce4;",
+    "Preventivní prohlídka": "background-color:#e5b9b7;",
+    "Endo": "background-color:#c00000;",
+    "Dentální hygiena 60 min": "background-color:#fac08f;",
+    "Fixace": "background-color:#00b050;",
+    "Preparace": "background-color:#ff0000;",
+    "Extrakce odborná": "background-color:#000000;",
+    "broušení": "background-color:#ffff00;",
+    "Otisk HTN/DTN": "background-color:#cc66ff;",
+    "Předání HTN/DTN": "background-color:#cc66ff;",
+    "FRC + broušení": "background-color:#9bbb59;",
+    "Předání protetické práce": "background-color:#76923c;",
+    "Extrakce": "background-color:#000000;",
+    "Scaling ": "background-color:#7030a0;",
+    "Recall": "background-color:#e36c09;",
+    "Preventívní prohlídka ": "background-color:#ffff00;",
+    "Otisk na bělení zubů": "background-color:#ff0000;",
+    "Preparce": "background-color:#f79646;",
+    "jiná": "background-color:#000000;",
+    "Vyrvání zubu": "background-color:#7f7f7f;",
+    "prevence II": "background-color:#548dd4;",
+    "Kontrolni vysetreni": "background-color:#92d050;",
+    "Endodontické ošetření": "background-color:#548dd4;",
+    "test": "background-color:#92d050;"
+  }
 }

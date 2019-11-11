@@ -1,21 +1,22 @@
 extends layout
-
 block content
-  p= opstatus
+  if opstatus
+    +alert-ix-info(opstatus)
   h1= title
-  h2= "Dashboard"
-  h4 Aktivni ucet:
-  p #{auth.email}
-  a(href="/auth")
-    button(type=button) re-authenticate
-
-  h4= "Seznam lekaru:"
-  ul#users
-    for dentist in dentists
-      p #{dentist.name}
-      select(name="ordinace")
-        each room in rooms
-          option(value=room selected=(dentist.room === room)) #{room}
-  a(href="/updatelist")
-    button(type=button) Obnov seznam lekaru
-  button(type=button) Uloz prirazeni ordinaci
+  +panel-primary("Account")
+    div.account
+      h4 Aktivni ucet:
+      p #{auth.email}
+    +a-btn("/auth") Prihlaseni
+  +panel-primary("Ordinace")
+    form(method='POST' action='/updaterooms')
+      ul#rooms(class='roomlist')
+        for room in rooms
+          div
+            label(for='lekari') #{room.name}
+          div
+            select(name="lekari" style=room.color class=('btn btn-default dropdown-toggle'))
+              each dentist in dentists
+                  option(value=dentist.id selected=(room.dentist === dentist.id)) #{dentist.name}
+      +submit-primary("Uloz prirazeni ordinaci")
+      +a-btn-warning("/updatelist") Obnov seznam lekaru

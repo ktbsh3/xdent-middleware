@@ -38,8 +38,7 @@ function extractSeeWhatIDidThere(body) {
         for (i = 0; i < docs.length; i++) {
             let temp = {
                 "name": he.decode(docs[i].match(/(?<=>)(.*?)(?=<)/)[0].toString()),
-                "id": ids[i].match(/(?<=")(.*?)(?=")/).toString(),
-                "room": ""
+                "id": ids[i].match(/(?<=")(.*?)(?=")/)[0].toString(),
             };
             db.get('dentists').push(temp).write();
             mapped.push(temp);

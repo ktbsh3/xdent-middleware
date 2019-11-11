@@ -1,8 +1,36 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 900px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-a {
-  color: #00B7FF;
+.login {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login > .btn {
+  margin-top: 10px;
+  margin-left: 0;
+  width: 30%;
+}
+
+.account > * {
+  margin-left: 12px;
+}
+
+.roomlist * {
+  display: inline-block;
+  padding: 5px;
+  margin: 7px;
+  margin-top: 5px;
+}
+
+.btn {
+  margin-left: 10px;
 }

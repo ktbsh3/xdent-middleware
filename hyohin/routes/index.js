@@ -18,8 +18,18 @@ router.get('/', function(req, res, next) {
 router.get('/updatelist', function (req, res, next) {
   dentistman( (rs) => {
     let opstatus = encodeURIComponent(rs);
+    console.log(opstatus);
     res.redirect('/?opstatus=' + opstatus);
   });
+});
+router.post('/updaterooms', function (req, res, next) {
+  form = JSON.parse(JSON.stringify(req.body));
+  console.log(form);
+  console.log("AAAA");
+  for (var i = 0; i <4; i++) {
+    db.set(`rooms[${i}].dentist`, form.lekari[i]).write();
+  }
+  res.redirect('/');
 });
 
 module.exports = router;
