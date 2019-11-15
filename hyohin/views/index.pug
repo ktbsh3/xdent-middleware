@@ -5,18 +5,17 @@ block content
   h1= title
   +panel-primary("Account")
     div.account
-      h4 Aktivni ucet:
+      h4 Aktivní účet:
       p #{auth.email}
-    +a-btn("/auth") Prihlaseni
+    +a-btn("/auth") Přihlášení
   +panel-primary("Ordinace")
     form(method='POST' action='/updaterooms')
       ul#rooms(class='roomlist')
         for room in rooms
           div
             label(for='lekari') #{room.name}
-          div
             select(name="lekari" style=room.color class=('btn btn-default dropdown-toggle'))
               each dentist in dentists
                   option(value=dentist.id selected=(room.dentist === dentist.id)) #{dentist.name}
-      +submit-primary("Uloz prirazeni ordinaci")
-      +a-btn-warning("/updatelist") Obnov seznam lekaru
+      +submit-primary("Ulož přiřazení ordinací")
+      +a-btn-warning("/updatelist") Obnov seznam lékařů

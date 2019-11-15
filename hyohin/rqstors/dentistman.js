@@ -45,10 +45,10 @@ function extractSeeWhatIDidThere(body) {
         }
         db.set('dentists', mapped).write();
         console.log(db.get('dentists').value());
-        return ("Seznam lekaru aktualizovan");
+        return ("Seznam lékařů aktualizován.");
     }
     else {
-        return("Nebyla nalezena odpoved obsahujici seznam lekaru, je platna autentikace?");
+        return("Nebyla nalezena odpověď serveru obsahující seznam lékařů, je platná autentikace?");
     }
 }
 

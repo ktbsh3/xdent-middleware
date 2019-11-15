@@ -1,0 +1,7 @@
+extends layout
+block content
+    for key in colorkey
+        div(style=`background-color: ${colormap[key]}`)
+            p #{key}
+
+

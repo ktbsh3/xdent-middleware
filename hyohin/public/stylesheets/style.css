@@ -24,8 +24,7 @@ body {
   margin-left: 12px;
 }
 
-.roomlist * {
-  display: inline-block;
+.roomlist > * {
   padding: 5px;
   margin: 7px;
   margin-top: 5px;
@@ -33,4 +32,21 @@ body {
 
 .btn {
   margin-left: 10px;
+}
+
+#rooms {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+label {
+  margin-right: 35px;
 }

@@ -1,7 +1,7 @@
 var request = require('request');
 var db = require('../database');
 
-function getEvents() {
+function pullEvents() {
     //var day = "2019-11-07";
     var day = new Date().toISOString().split("T")[0];
     let ids = db.get('dentists').map('id').value();
@@ -22,12 +22,12 @@ function getEvents() {
     request(options,  (err, res, body) => {
         if (err) throw new Error(err);
         var calendar = JSON.parse(res.body);
-        processCalendar(calendar.d);
+        pushEvents(calendar.d);
     })
 }
 
-function processCalendar(data) {
-    let numOfUsrs = data.length
+function pushEvents(data) {
+    let numOfUsrs = data.length;
     console.log(numOfUsrs);
     for (let i = 0; i < numOfUsrs; i++) {
         let entity = data[i];
@@ -43,4 +43,4 @@ function processCalendar(data) {
     }
 }
 
-getEvents();
+module.exports = pullEvents;

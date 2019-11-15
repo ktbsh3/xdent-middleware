@@ -1,6 +1,7 @@
 var request = require('request');
+var db = require('../database');
 
-function getCookies(db, callback) {
+function getCookies(callback) {
     var login = db.get('auth.email').value();
     var pwd = db.get('auth.password').value();
     var options = {
@@ -17,10 +18,10 @@ function getCookies(db, callback) {
         kuki = condenseCookies(res.headers["set-cookie"]);
         if (kuki.includes(".ASPXAUTH")) {
             db.set('auth.cookies', kuki).write();
-            callback("Prihlaseni uspesne");
+            if (callback){callback("Přihlášení úspěšné.");}
         }
         else {
-            callback("Neplatne uzivatelske jmeno/heslo");
+            if (callback){callback("Autentikace selhala, neplatný e-mail/heslo?");}
         }
         console.log(kuki);
     });
@@ -33,4 +34,4 @@ function condenseCookies(cookieArray) {
     return cookieArray.join(";");
 }
 
-module.exports = {getCookies};
+module.exports = getCookies;

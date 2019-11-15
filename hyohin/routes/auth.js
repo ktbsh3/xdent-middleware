@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 router.post('/update', (req, res, next) => {
     form = JSON.parse(JSON.stringify(req.body));
     db.set('auth', form).write();
-    cookieman.getCookies(db, function (rs) {
+    cookieman( function (rs) {
         let opstatus = encodeURIComponent(rs);
         res.redirect('/?opstatus=' + opstatus);
     });
