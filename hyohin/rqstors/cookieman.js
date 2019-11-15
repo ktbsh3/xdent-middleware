@@ -1,5 +1,6 @@
 var request = require('request');
 var db = require('../database');
+var prefix = '[COOKIEMAN]: ';
 
 function getCookies(callback) {
     var login = db.get('auth.email').value();
@@ -23,7 +24,7 @@ function getCookies(callback) {
         else {
             if (callback){callback("Autentikace selhala, neplatný e-mail/heslo?");}
         }
-        console.log(kuki);
+        console.log(prefix + kuki);
     });
 }
 
@@ -34,4 +35,4 @@ function condenseCookies(cookieArray) {
     return cookieArray.join(";");
 }
 
-module.exports = getCookies;
+module.exports = {getCookies};

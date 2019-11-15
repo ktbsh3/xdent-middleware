@@ -1,7 +1,12 @@
 extends layout
 block content
+    h1 Data pro zarovku
+    for room in mappedcolors
+        div(style=`background-color: ${room[1]}`)
+            p #{room[0]}
+
+    h1 Mapa sluzeb
     for key in colorkey
         div(style=`background-color: ${colormap[key]}`)
             p #{key}
-
 

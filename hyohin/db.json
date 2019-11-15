@@ -2,7 +2,7 @@
   "auth": {
     "email": "nas@xdent.cz",
     "password": "online",
-    "cookies": "ASP.NET_SessionId=ulpjx0q5v1rshhr1qsqngvwr;ASP.NET_SessionId=ulpjx0q5v1rshhr1qsqngvwr;.ASPXAUTH=6BAFEC716C35E2C19E575744A2D860EF93BC1DACB11275EBD1AC8B3011578330005013DBE905D0B4090ACC910653D16133B3755F01B680AD9C646CA6DEB238AD2C0339362F7CE92A8C430EE2643394931AC5C47FAB4E08FA61058E6EE5E6A20B697EEC3C0788085CBAF5FCED5270CA16DF6C45F4705A3CB46AEE47D292D1F7500CA7A65BB4F9E2C8259782E1528178C67F416441442F6A63D236E07E9B1FC97F;hUserLogin=1c3ef728-cc56-4fb9-9528-9247eec117ba;hUserLoginRedirect=True"
+    "cookies": "ASP.NET_SessionId=xodnqec4z1ikdzrrhsdic1ik;ASP.NET_SessionId=xodnqec4z1ikdzrrhsdic1ik;.ASPXAUTH=67E9E150505DD5C745C602B0700C0FC9625F3F34FA98250DAD7D1299E2C3768117FD7FD869493A4639B08425EEC2240338FC5DD17DCB8C009A0CB82D66ECF538326E0AB329D2F33632398A8201AE96714248B4F2B435338B1DFCE8BA39B089D478A63891A4BC1195889F52FBD18B0F98528FCDDDB82409920670139E01FC8DF51FFC57D2A6773550DDDAF11EC93CE168E8708853F3D7B88983C957534E3413C2;hUserLogin=1c3ef728-cc56-4fb9-9528-9247eec117ba;hUserLoginRedirect=True"
   },
   "dentists": [
     {
@@ -44,6 +44,24 @@
           "appColor": null,
           "DOB": "",
           "City": ""
+        },
+        {
+          "ID": "5f55424e-a1a5-42ba-b60b-9f9c65cbaf72",
+          "idResource": null,
+          "Start": "2019-11-15 18:55:00",
+          "Finish": "2019-11-15 19:10:00",
+          "Duration": 0,
+          "Caption": "Test Test",
+          "ResourceName": null,
+          "Description": "",
+          "ServiceName": "Vstupní prohlídka 0-6 let",
+          "Phone": "",
+          "BirthNumber": "1111111111",
+          "IsWaitingClients": false,
+          "idClient": null,
+          "appColor": null,
+          "DOB": "11.11.2011",
+          "City": ""
         }
       ]
     },
@@ -68,16 +86,74 @@
           "appColor": null,
           "DOB": "",
           "City": ""
+        },
+        {
+          "ID": "066caf71-8741-4ad0-97a2-fdbc7342f5fe",
+          "idResource": null,
+          "Start": "2019-11-15 18:30:00",
+          "Finish": "2019-11-15 19:30:00",
+          "Duration": 0,
+          "Caption": "Test Test",
+          "ResourceName": null,
+          "Description": "",
+          "ServiceName": "Dentální hygiena",
+          "Phone": "",
+          "BirthNumber": "1111111111",
+          "IsWaitingClients": false,
+          "idClient": null,
+          "appColor": null,
+          "DOB": "11.11.2011",
+          "City": ""
         }
       ]
     },
     {
       "name": "Apolena Apolenová",
-      "id": "c9aa2c54-f610-49c3-af9e-fb97c08cbde3"
+      "id": "c9aa2c54-f610-49c3-af9e-fb97c08cbde3",
+      "events": [
+        {
+          "ID": "98c674b9-70a0-4801-9a7f-a679eb206f65",
+          "idResource": null,
+          "Start": "2019-11-15 18:30:00",
+          "Finish": "2019-11-15 19:00:00",
+          "Duration": 0,
+          "Caption": "Test Test",
+          "ResourceName": null,
+          "Description": "",
+          "ServiceName": "Extrakce",
+          "Phone": "",
+          "BirthNumber": "1111111111",
+          "IsWaitingClients": false,
+          "idClient": null,
+          "appColor": null,
+          "DOB": "11.11.2011",
+          "City": ""
+        }
+      ]
     },
     {
       "name": "Monika Moniková",
-      "id": "ba7dd0ed-a16f-4a18-bfc5-a20ec4047b56"
+      "id": "ba7dd0ed-a16f-4a18-bfc5-a20ec4047b56",
+      "events": [
+        {
+          "ID": "f513a594-50bc-4e14-9507-a15a1f715a7c",
+          "idResource": null,
+          "Start": "2019-11-15 18:30:00",
+          "Finish": "2019-11-15 19:30:00",
+          "Duration": 0,
+          "Caption": "Test Test",
+          "ResourceName": null,
+          "Description": "",
+          "ServiceName": "Kaz 1 h",
+          "Phone": "",
+          "BirthNumber": "1111111111",
+          "IsWaitingClients": false,
+          "idClient": null,
+          "appColor": null,
+          "DOB": "11.11.2011",
+          "City": ""
+        }
+      ]
     },
     {
       "name": "Soňa  Soňová",
@@ -86,16 +162,20 @@
     {
       "name": "Jan  Novák",
       "id": "ccda5ebb-9cf5-429d-9498-49b3a994a4a7"
+    },
+    {
+      "name": "F J",
+      "id": "8a7a026c-21b3-447f-b603-b651efb5c402"
     }
   ],
   "rooms": [
     {
       "name": "Ordinace 1",
-      "dentist": "231d3511-0cd7-4ea5-a887-1c8799f32372"
+      "dentist": "292a5ebd-0a81-4dbc-bbf7-e5fdb0c06818"
     },
     {
       "name": "Ordinace 2",
-      "dentist": "ba7dd0ed-a16f-4a18-bfc5-a20ec4047b56"
+      "dentist": "231d3511-0cd7-4ea5-a887-1c8799f32372"
     },
     {
       "name": "Ordinace 3",
@@ -103,7 +183,7 @@
     },
     {
       "name": "Ordinace 4",
-      "dentist": "ccda5ebb-9cf5-429d-9498-49b3a994a4a7"
+      "dentist": "ba7dd0ed-a16f-4a18-bfc5-a20ec4047b56"
     }
   ],
   "colormap": {

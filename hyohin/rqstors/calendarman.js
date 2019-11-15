@@ -28,19 +28,16 @@ function pullEvents() {
 
 function pushEvents(data) {
     let numOfUsrs = data.length;
-    console.log(numOfUsrs);
+    //console.log(numOfUsrs);
     for (let i = 0; i < numOfUsrs; i++) {
         let entity = data[i];
-        console.log("Name: " + entity.ResourceName);
-        console.log("ID: " + entity.ResourceID);
-        /*for (const evt of entity.Appointments) {
-            console.log(evt);
-        }*/
+        //console.log("Name: " + entity.ResourceName);
+        //console.log("ID: " + entity.ResourceID);
         entity.Appointments.forEach( (evt) => {
-            console.log(evt)
+            //console.log(evt)
         });
         db.get('dentists').find({ id: entity.ResourceID }).set('events', entity.Appointments).write();
     }
 }
 
-module.exports = pullEvents;
+module.exports = {pullEvents};

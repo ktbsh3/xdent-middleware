@@ -4,6 +4,7 @@ var fs = require('fs');
 var app = require('../app.js');
 var db = require('../database');
 var dentistman = require('../rqstors/dentistman');
+var calendarman = require('../rqstors/calendarman');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,16 +17,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/updatelist', function (req, res, next) {
-  dentistman( (rs) => {
+  dentistman.getDentists( (rs) => {
     let opstatus = encodeURIComponent(rs);
-    console.log(opstatus);
+    calendarman.pullEvents();
+    //console.log(opstatus);
     res.redirect('/?opstatus=' + opstatus);
   });
 });
+
 router.post('/updaterooms', function (req, res, next) {
   form = JSON.parse(JSON.stringify(req.body));
-  console.log(form);
-  console.log("AAAA");
+  //console.log(form);
   for (var i = 0; i <4; i++) {
     db.set(`rooms[${i}].dentist`, form.lekari[i]).write();
   }

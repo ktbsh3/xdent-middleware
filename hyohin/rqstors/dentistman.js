@@ -44,7 +44,7 @@ function extractSeeWhatIDidThere(body) {
             mapped.push(temp);
         }
         db.set('dentists', mapped).write();
-        console.log(db.get('dentists').value());
+        //console.log(db.get('dentists').value());
         return ("Seznam lékařů aktualizován.");
     }
     else {
@@ -52,4 +52,4 @@ function extractSeeWhatIDidThere(body) {
     }
 }
 
-module.exports = getDentists;
+module.exports = {getDentists};

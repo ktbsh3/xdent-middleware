@@ -28,8 +28,8 @@ function pushColormap(body) {
         colorArray[str.substring(0, str.length -5)] = serviceColor[i].substring(17);
     }
     db.set('colormap', colorArray).write();
-    console.log(colorArray);
+    //console.log(colorArray);
 }
 
-module.exports = pullColors;
+module.exports = {pullColors};
 //setColors(new Date().toISOString().split("T")[0]);
